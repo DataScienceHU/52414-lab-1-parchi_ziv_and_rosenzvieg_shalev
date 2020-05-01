@@ -437,7 +437,7 @@ Solution:
 # we want to do kind of normalization between the two.
 
 #now, we convert this data with excel to better csv
-df <- read.csv("test_israel.csv",sep = "\t", TRUE)
+df <- read.csv(url("https://raw.githubusercontent.com/DataScienceHU/52414-lab-1-parchi_ziv_and_rosenzvieg_shalev/master/test_israel.csv"),sep = "\t", TRUE)
 df$lab_id[1:313135] <- 1           #it's will help us to aggregate the data
 df_agg <- aggregate(lab_id ~ result_date, data = df, FUN = sum)
 df_agg$result_date<-as.Date(df_agg$result_date,"%d/%m/%y")   #we will fix the date
